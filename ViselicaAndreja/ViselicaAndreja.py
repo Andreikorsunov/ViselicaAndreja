@@ -3,7 +3,7 @@ from tkinter import messagebox
 import random
 def chel():
     global ss,ll,ss1,n,ffdata,temps,first
-    first = inpp.get()#get - возвращает значение запрашиваемого ключа
+    first = inpp.get()
     input1.delete(0,END)
     if(n>0):
         if(first in ss):
@@ -11,7 +11,7 @@ def chel():
                 if(ss[i] == first and ll[i] == '?'):
                     ll.pop(i)
                     ll.insert(i,ss[i])
-                    xx = ''.join(ll)#join - добавляет разделители, работает со списками
+                    xx = ''.join(ll)#join - добавляет разделители
                     ss = list(ss)
                     ss.pop(i)
                     ss.insert(i,"?")
@@ -27,7 +27,7 @@ def chel():
                         break
         else:
             n -= 1
-            try1.configure(text='Попыток = {}'.format(n)) #Если кратко, то format - это форматирование текста для более красивого вывода
+            try1.configure(text='Попыток = {}'.format(n))
     if(n<=0):
         ans.configure(text='Ты проиграл!')
         res = messagebox.askyesno("Сообщение", 'Ты проиграл!\n хочешь попробовать ещё раз?')
@@ -39,7 +39,8 @@ def chel():
 
 def jj(event):
     chel()
-list1 = ['язва','аргумент','щавель','автобус','город','парковка','школа','яблоко','банан','человек','роща','роза','машина','победа','поражение','шишка','поле','футбол','герой']
+
+list1 = ['женщина','мужчина','кварц','мрамор','баскетбол','магазин','юла','язва','аргумент','щавель','автобус','город','парковка','школа','яблоко','банан','человек','роща','роза','машина','победа','поражение','шишка','поле','футбол','герой']
 
 root = Tk()
 root.geometry('800x500')
@@ -50,13 +51,13 @@ root.title('Виселица')
 introlabel = Label(root,text='Виселица',font=('arial',35,'bold'),bg='yellow')
 introlabel.place(x=300,y=0)
 #На экране загаданное слово в виде вопросиков
-wordlabel = Label(root,text='',font=('arial',55,'bold'),bg='yellow')
+wordlabel = Label(root,font=('arial',55,'bold'),bg='yellow')
 wordlabel.place(x=240,y=150)
 #На экране показано сколько у тебя осталось попыток
-try1 = Label(root,text='',font=('arial',25,'bold'),bg='yellow')
+try1 = Label(root,font=('arial',25,'bold'),bg='yellow')
 try1.place(x=575,y=75)
 #Вывод в окне текст (ты выйграл) (ты проиграл)
-ans = Label(root,text='',font=('arial',25,'bold'),bg='yellow')
+ans = Label(root,font=('arial',25,'bold'),bg='yellow')
 ans.place(x=250,y=450)
 
 
